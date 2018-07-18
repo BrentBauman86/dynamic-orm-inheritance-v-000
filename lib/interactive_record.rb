@@ -36,7 +36,7 @@ class InteractiveRecord
   end
 
   def table_name_for_insert
-    binding.pry
+    # binding.pry
     self.class.table_name
   end
 # binding.pry
@@ -49,6 +49,7 @@ class InteractiveRecord
   end
 
   def col_names_for_insert
+    binding.pry
     self.class.column_names.delete_if {|col| col == "id"}.join(", ")
   end
 
