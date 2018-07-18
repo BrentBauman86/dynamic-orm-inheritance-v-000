@@ -73,3 +73,15 @@ class InteractiveRecord
   end
 
 end
+
+def insert
+
+
+  sql = <<-SQL
+    INSERT INTO #{self.class.table_name} (title, content) VALUES (?, ?)
+
+  SQL
+
+  DB[:conn].execute(sql, self.title, self.content)
+  self.id = DB[:conn].execute(last_insert_rowid()).first 
+end
