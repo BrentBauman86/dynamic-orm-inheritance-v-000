@@ -23,7 +23,7 @@ class InteractiveRecord
   end
 
   def initialize(options={})
-    binding.pry
+    # binding.pry
     options.each do |property, value|
       self.send("#{property}=", value)
     end
@@ -36,7 +36,7 @@ class InteractiveRecord
   end
 
   def table_name_for_insert
-    binding.pry 
+    binding.pry
     self.class.table_name
   end
 
